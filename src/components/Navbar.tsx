@@ -4,6 +4,7 @@ import { buttonVariants } from "./ui/button";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
 import NavItems from "./NavItems";
 import Cart from "./Cart";
+import UserAccountNav from "./UserAccountNav";
 
 const Navbar = () => {
   const user = null; /*mock*/
@@ -37,7 +38,7 @@ const Navbar = () => {
                     <span className="h-6 w-px bg-gray-200" aria-hidden="true" />
                   )}
                   {user ? (
-                    <p></p>
+                    <UserAccountNav />
                   ) : (
                     <Link
                       href="/sign-up"
