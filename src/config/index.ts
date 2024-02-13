@@ -1,43 +1,43 @@
 export const PRODUCT_CATEGORIES = [
   {
-    label: "Health & Beauty",
-    value: "health-beauty" as const,
-    featured: [
-      {
-        name: "Best Sellers",
-        href: "#",
-        imageSrc: "/nav/health-beauty/",
-      },
-      {
-        name: "New Arrivals",
-        href: "#",
-        imageSrc: "/nav/health-beauty/",
-      },
-      {
-        name: "Editor pics",
-        href: "#",
-        imageSrc: "/nav/health-beauty/",
-      },
-    ],
-  },
-  {
     label: "Home & Living",
     value: "home-living" as const,
     featured: [
       {
         name: "Best Sellers",
         href: "#",
-        imageSrc: "/nav/home-living/",
+        imageSrc: "/images/navbar/home-living_bestsellers.jpg",
       },
       {
         name: "New Arrivals",
         href: "#",
-        imageSrc: "/nav/home-living/",
+        imageSrc: "/images/navbar/home-living_new-arrivals.jpg",
       },
       {
         name: "Editor pics",
         href: "#",
-        imageSrc: "/nav/home-living/",
+        imageSrc: "/images/navbar/home-living_editor-pics.jpg",
+      },
+    ],
+  },
+  {
+    label: "Health & Beauty",
+    value: "health-beauty" as const,
+    featured: [
+      {
+        name: "Best Sellers",
+        href: "#",
+        imageSrc: "/images/navbar/health-beauty_bestsellers.jpg",
+      },
+      {
+        name: "New Arrivals",
+        href: "#",
+        imageSrc: "/images/navbar/health-beauty_new-arrivals.jpg",
+      },
+      {
+        name: "Editor pics",
+        href: "#",
+        imageSrc: "/images/navbar/health-beauty_editor-pics.jpg",
       },
     ],
   },
@@ -48,17 +48,17 @@ export const PRODUCT_CATEGORIES = [
       {
         name: "Best Sellers",
         href: "#",
-        imageSrc: "/nav/jewelry-accessories/",
+        imageSrc: "/images/navbar/jewelry-accessories_bestsellers.jpg",
       },
       {
         name: "New Arrivals",
         href: "#",
-        imageSrc: "/nav/jewelry-accessories/",
+        imageSrc: "/images/navbar/jewelry-accessories_new-arrivals.jpg",
       },
       {
         name: "Editor pics",
         href: "#",
-        imageSrc: "/nav/jewelry-accessories/",
+        imageSrc: "/images/navbar/jewelry-accessories_editor-pics.jpg",
       },
     ],
   },

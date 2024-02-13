@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { signOut, useSession, signIn } from "next-auth/react";
 import { Gem } from "lucide-react";
 import { buttonVariants } from "./ui/button";
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
@@ -7,7 +8,6 @@ import Cart from "./Cart";
 import UserAccountNav from "./UserAccountNav";
 
 const Navbar = () => {
-  const user = null; /*mock*/
   return (
     <div className="bg-white sticky z-50 top-0 inset-x-0 h-16">
       <header className="relative bg-white">
@@ -26,6 +26,7 @@ const Navbar = () => {
 
               <div className="ml-auto flex items-center">
                 <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                  {/* 
                   {user ? null : (
                     <Link
                       href="/sign-in"
@@ -58,6 +59,7 @@ const Navbar = () => {
                       />
                     </div>
                   )}
+                   */}
                   <div className="ml-4 flow-root lg:ml-6">
                     <Cart />
                   </div>

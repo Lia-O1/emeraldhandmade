@@ -1,6 +1,6 @@
 "use client";
 
-import { Gem, ShoppingCart } from "lucide-react";
+import { ShoppingCart } from "lucide-react";
 import {
   Sheet,
   SheetContent,
@@ -77,7 +77,7 @@ const Cart = () => {
               className="relative mb-4 h-80 w-80 text-muted-foreground"
             >
               <Image
-                src="/empty-cart.jpg"
+                src="/images/navbar/empty-cart.jpg"
                 fill
                 alt="Empty shopping cart"
                 aria-hidden="true"
