@@ -1,26 +1,5 @@
 export const PRODUCT_CATEGORIES = [
   {
-    label: "Art & Collectibles",
-    value: "art-collectibles" as const,
-    featured: [
-      {
-        name: "Best Sellers",
-        href: "#",
-        imageSrc: "/nav/art-collectibles/",
-      },
-      {
-        name: "New Arrivals",
-        href: "#",
-        imageSrc: "/nav/art-collectibles/",
-      },
-      {
-        name: "Editor pics",
-        href: "#",
-        imageSrc: "/nav/art-collectibles/",
-      },
-    ],
-  },
-  {
     label: "Health & Beauty",
     value: "health-beauty" as const,
     featured: [
