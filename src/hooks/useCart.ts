@@ -1,7 +1,7 @@
 import { create } from "zustand";
 import { createJSONStorage, persist } from "zustand/middleware";
 
-type Product = {
+export type Product = {
   name: string;
   id: string;
   price: string;
@@ -29,9 +29,17 @@ export const useCart = create<CartState>()(
           return { items: [...state.items, { product }] };
         }),
       removeItem: (id) =>
-        set((state) => ({
-          items: state.items.filter((item) => item.product.id !== id),
-        })),
+        set((state) => {
+          const index = state.items.findIndex(
+            (item) => item.product.id === id
+          ); /*to find the index of the first element in an array that satisfies a provided testing function*/
+          if (index !== -1) {
+            const newItems = [...state.items];
+            newItems.splice(index, 1);
+            return { items: newItems };
+          }
+          return state;
+        }),
       clearCart: () => set({ items: [] }),
     }),
     {
