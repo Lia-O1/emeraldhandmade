@@ -70,6 +70,7 @@ const NavItem = ({
                             src={item.imageSrc}
                             alt="Product category image"
                             fill
+                            sizes="33vw"
                             className="object-cover object-center"
                           />
                         </div>

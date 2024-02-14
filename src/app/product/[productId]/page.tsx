@@ -1,9 +1,10 @@
 import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import AddToCartButton from "@/components/AddToCartButton";
 import ImageSlider from "@/components/ImageSlider";
 import ProductReel from "@/components/ProductReel";
 import { products } from "@/config/products";
 import { formatPrice } from "@/lib/utils";
-import { Check, Shield } from "lucide-react";
+import { Check } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -131,16 +132,14 @@ const Page = async ({ params }: PageProps) => {
 
           {/* Product images */}
           <div className="mt-10 lg:col-start-2 lg:row-span-2 lg:mt-0 lg:self-center">
-            <div className="aspect-square rounded-lg">
+            <div className="aspect-square rounded-lg w-">
               <ImageSlider urls={product.urls} />
             </div>
           </div>
 
           {/* add to cart part */}
-          <div className="mt-10 lg:col-start-1 lg:row-start-2 lg:max-w-lg lg:self-start">
-            <div>
-              <div className="mt-10"></div>
-            </div>
+          <div className="mt-10 w-full lg:w-2/5">
+            <AddToCartButton />
           </div>
         </div>
       </div>
