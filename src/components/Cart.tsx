@@ -96,7 +96,7 @@ const Cart = () => {
             <div className="text-xl font-semibold">Your cart is empty</div>
             <SheetTrigger asChild>
               <Link
-                href="/products"
+                href="/"
                 className={buttonVariants({
                   variant: "link",
                   size: "sm",
