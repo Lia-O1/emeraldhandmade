@@ -11,12 +11,19 @@ type Category = (typeof PRODUCT_CATEGORIES)[number];
 
 interface NavItemProps {
   category: Category;
+  close: () => void;
   handleOpen: () => void;
   isOpen: boolean;
   isAnyOpen: boolean;
 }
 
-const NavItem = ({ category, handleOpen, isOpen, isAnyOpen }: NavItemProps) => {
+const NavItem = ({
+  category,
+  handleOpen,
+  close,
+  isOpen,
+  isAnyOpen,
+}: NavItemProps) => {
   return (
     <div className="flex">
       <div className="relative flex items-center">
@@ -36,6 +43,7 @@ const NavItem = ({ category, handleOpen, isOpen, isAnyOpen }: NavItemProps) => {
 
       {isOpen ? (
         <div
+          onClick={() => close()}
           className={cn(
             "absolute inset-x-0 top-full text-sm text-muted-foreground",
             {

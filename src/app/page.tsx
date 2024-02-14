@@ -1,7 +1,9 @@
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CheckCircle, Gift, Heart } from "lucide-react";
 import Link from "next/link";
+import { products } from "@/config/products";
 import MaxWidthWrapper from "./components/MaxWidthWrapper";
+import ProductReel from "@/components/ProductReel";
 
 const perks = [
   {
@@ -25,6 +27,11 @@ const perks = [
 ];
 
 export default function Home() {
+  const filteredProducts = products.filter(
+    (p) => p.category === "home-living" && p.subcategory === "bestsellers"
+  );
+  const items = filteredProducts.map((product) => product.items).flat();
+
   return (
     <>
       <MaxWidthWrapper>
@@ -52,7 +59,11 @@ export default function Home() {
             <Button variant={"secondary"}>Our quality promise &rarr;</Button>
           </div>
         </div>
-        {/* TODO: Products' list*/}
+        <ProductReel
+          href="/products?category=home-living&subcategory=bestsellers"
+          title="Recommended For You"
+          items={items}
+        />
       </MaxWidthWrapper>
       <section className="border-t border-gray-200 bg-gray-50">
         <MaxWidthWrapper className="py-20">

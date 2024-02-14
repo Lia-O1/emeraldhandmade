@@ -20,7 +20,7 @@ const ProductReel = (props: ProductReelProps) => {
 
   return (
     <section className="py-12">
-      <div className="md:flex md:items-center md:justify-between mb-4">
+      <div className="md:flex md:items-center md:justify-between text-center mb-4">
         <div className="max-w-2xl lg:max-w-4xl ">
           {title ? (
             <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
