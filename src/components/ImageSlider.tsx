@@ -35,7 +35,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
 
   const activeStyles =
     "active:scale-[0.97] grid opacity-100 hover:scale-105 absolute top-1/2 -translate-y-1/2 aspect-square h-8 w-8 z-50 place-items-center rounded-full border-2 bg-white border-zinc-300";
-  const inactiveStyles = "hidden text-gray-400";
+  const inactiveStyles = "hidden";
 
   return (
     <div className="group relative bg-zinc-100 aspect-square overflow-hidden rounded-xl">
@@ -50,7 +50,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
             "hover:bg-primary-300 text-primary-800 opacity-100":
               !slideConfig.isEnd,
           })}
-          aria-label="next image"
+          aria-label="Next image"
         >
           <ChevronRight className="h-4 w-4 text-zinc-700" />{" "}
         </button>
@@ -64,7 +64,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
             "hover:bg-primary-300 text-primary-800 opacity-100":
               !slideConfig.isBeginning,
           })}
-          aria-label="previous image"
+          aria-label="Previous image"
         >
           <ChevronLeft className="h-4 w-4 text-zinc-700" />{" "}
         </button>
@@ -78,7 +78,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
         }}
         onSwiper={(swiper) => setSwiper(swiper)}
         spaceBetween={50}
-        modules={[Pagination]}
+        modules={[Pagination]} /*enables swiping between images*/
         slidesPerView={1}
         className="h-full w-full"
       >
@@ -90,6 +90,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
               className="-z-10 h-full w-full object-cover object-center"
               src={url}
               alt="Product image"
+              sizes="(min-width: 1024px) 33vw, 50vw"
             />
           </SwiperSlide>
         ))}
