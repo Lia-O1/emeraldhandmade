@@ -29,7 +29,7 @@ export const products = [
   },
   {
     category: "health-beauty",
-    subcategory: "new-arrivals",
+    subcategory: "newarrivals",
     items: [
       {
         name: "Vibrant Harmony Herbal Tea",
@@ -46,7 +46,7 @@ export const products = [
   },
   {
     category: "health-beauty",
-    subcategory: "editor-pics",
+    subcategory: "editorpics",
     items: [
       {
         name: "Serene Floral Essence Oil",
@@ -113,7 +113,7 @@ export const products = [
   },
   {
     category: "home-living",
-    subcategory: "new-arrivals",
+    subcategory: "newarrivals",
     items: [
       {
         name: "Enchanted Owl Clay Pot",
@@ -141,7 +141,7 @@ export const products = [
   },
   {
     category: "home-living",
-    subcategory: "editor-pics",
+    subcategory: "editorpics",
     items: [
       {
         name: "Elegant Affection Candle Set",
@@ -197,7 +197,7 @@ export const products = [
   },
   {
     category: "jewelry-accessories",
-    subcategory: "new-arrivals",
+    subcategory: "newarrivals",
     items: [
       {
         name: "Glittery Dual-Tone Leaf Earrings",
@@ -215,7 +215,7 @@ export const products = [
   },
   {
     category: "jewelry-accessories",
-    subcategory: "editor-pics",
+    subcategory: "editorpics",
     items: [
       {
         name: "Emerald Elegance Gold Ring",
