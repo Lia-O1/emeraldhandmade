@@ -15,7 +15,9 @@ interface ImageSliderProps {
 }
 
 const ImageSlider = ({ urls }: ImageSliderProps) => {
-  const [swiper, setSwiper] = useState<null | SwiperType>(null);
+  const [swiper, setSwiper] = useState<null | SwiperType>(
+    null
+  ); /*Storing the Swiper instance in a state variable allows you to use he slideNext() and slidePrev() elsewhere in your component, outside of the Swiper component’s onSwiper prop*/
   const [activeIndex, setActiveIndex] = useState(0);
 
   const [slideConfig, setSlideConfig] = useState({
@@ -78,7 +80,7 @@ const ImageSlider = ({ urls }: ImageSliderProps) => {
         }}
         onSwiper={(swiper) => setSwiper(swiper)}
         spaceBetween={50}
-        modules={[Pagination]} /*enables swiping between images*/
+        modules={[Pagination]} /*enables the pagination functionality*/
         slidesPerView={1}
         className="h-full w-full"
       >
