@@ -139,7 +139,7 @@ const Page = async ({ params }: PageProps) => {
 
           {/* add to cart part */}
           <div className="mt-10 w-full lg:w-2/5">
-            <AddToCartButton />
+            <AddToCartButton product={product} />
           </div>
         </div>
       </div>
