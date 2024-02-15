@@ -30,6 +30,7 @@ const ThankYouPage = () => {
           src="/images/thankyou.jpg"
           className="h-full w-full object-cover object-center"
           alt="Thank you for your order"
+          sizes="50vw"
         />
       </div>
 
@@ -45,21 +46,25 @@ const ThankYouPage = () => {
 
             <div className="mt-16 text-sm font-medium">
               <div className="text-muted-foreground">Order nr.</div>
-              <div className="mt-2 text-gray-900">{orderId}</div>
+              <div className="mt-2 text-gray-900">{isMounted && orderId}</div>
 
               <ul className="mt-6 divide-y divide-gray-200 border-t border-gray-200 text-sm font-medium text-muted-foreground">
                 {isMounted &&
-                  items.map(({ product }) => {
+                  items.map(({ product }, index) => {
                     const imageUrl = product.urls[0];
 
                     return (
-                      <li key={product.id} className="flex space-x-6 py-6">
+                      <li
+                        key={product.id + index}
+                        className="flex space-x-6 py-6"
+                      >
                         <div className="relative h-24 w-24">
                           <Image
                             fill
                             src={imageUrl}
                             alt={`${product.name} image`}
                             className="flex-none rounded-md bg-gray-100 object-cover object-center"
+                            sizes="5vw"
                           />
                         </div>
 

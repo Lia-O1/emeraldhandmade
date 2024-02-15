@@ -69,11 +69,11 @@ const Page = () => {
               })}
             >
               {isMounted &&
-                items.map(({ product }) => {
+                items.map(({ product }, index) => {
                   const imageUrl = product.urls[0];
 
                   return (
-                    <li key={product.id} className="flex py-6 sm:py-10">
+                    <li key={product.id + index} className="flex py-6 sm:py-10">
                       <div className="flex-shrink-0">
                         <div className="relative h-24 w-24">
                           <Image
@@ -81,6 +81,7 @@ const Page = () => {
                             src={imageUrl}
                             alt="Product image"
                             className="h-full w-full rounded-md object-cover object-center sm:h-48 sm:w-48"
+                            sizes="10vw"
                           />
                         </div>
                       </div>

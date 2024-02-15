@@ -18,6 +18,7 @@ const CartItem = ({ product }: { product: Product }) => {
               alt={product.name}
               fill
               className="absolute object-cover"
+              sizes="5vw"
             />
           </div>
 

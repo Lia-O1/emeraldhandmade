@@ -98,6 +98,7 @@ const Cart = () => {
                 fill
                 alt="Empty shopping cart"
                 aria-hidden="true"
+                sizes="20vw"
               />
             </div>
             <div className="text-xl font-semibold">Your cart is empty</div>

@@ -37,7 +37,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
-            Your go-to marketplace for{" "}
+            Your go-to destination for{" "}
             <span className="text-emerald-800">
               unique, handcrafted treasures
             </span>
@@ -46,7 +46,7 @@ export default function Home() {
           <p className="mt-6 text-large max-w-prose text-muted-foreground">
             Welcome to EmeraldHandmade
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 mt-6">
+          <div className="mt-6">
             <Link
               href="/products?subcategory=bestsellers"
               className={buttonVariants({
@@ -56,7 +56,6 @@ export default function Home() {
             >
               Browse Trending
             </Link>
-            <Button variant={"secondary"}>Our quality promise &rarr;</Button>
           </div>
         </div>
         <ProductReel
