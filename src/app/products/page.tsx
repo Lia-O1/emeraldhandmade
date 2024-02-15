@@ -7,11 +7,13 @@ interface PageProps {
 }
 
 const ProductsPage = ({ searchParams }: PageProps) => {
-  const category = searchParams.category;
+  const category = searchParams?.category;
   const subcategory = searchParams.subcategory;
 
   const filteredProducts = products.filter(
-    (p) => p.category === category && p.subcategory === subcategory
+    (p) =>
+      (category ? p?.category === category : true) &&
+      p.subcategory === subcategory
   );
 
   const items = filteredProducts.map((product) => product.items).flat();

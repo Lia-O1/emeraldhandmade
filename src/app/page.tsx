@@ -48,7 +48,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mt-6">
             <Link
-              href="/products"
+              href="/products?subcategory=bestsellers"
               className={buttonVariants({
                 variant: "emerald",
                 size: "default",
