@@ -30,10 +30,6 @@ const MobileNav = () => {
 
   return (
     <div>
-      <div className="relative z-40 lg:hidden ml-auto">
-        <div className="fixed inset-0 bg-black bg-opacity-25" />
-      </div>
-
       <div className="fixed overflow-y-scroll overscroll-y-none inset-0 z-40 flex">
         <div className="w-full">
           <div className="relative flex w-full flex-col overflow-y-auto bg-white pb-12 shadow-xl">
@@ -69,20 +65,22 @@ const MobileNav = () => {
                             key={item.name}
                             className="group relative text-sm"
                           >
-                            <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
-                              <Image
-                                fill
-                                src={item.imageSrc}
-                                alt="Product category image"
-                                className="object-cover object-center"
-                                sizes="50vw"
-                              />
-                            </div>
                             <Link
                               href={item.href}
                               className="mt-6 block font-medium text-gray-900"
                             >
-                              {item.name}
+                              <div className="relative aspect-square overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75">
+                                <Image
+                                  fill
+                                  src={item.imageSrc}
+                                  alt="Product category image"
+                                  className="object-cover object-center"
+                                  sizes="50vw"
+                                />
+                              </div>
+                              <div className="mt-6 font-medium text-gray-900">
+                                {item.name}
+                              </div>
                             </Link>
                           </div>
                         ))}

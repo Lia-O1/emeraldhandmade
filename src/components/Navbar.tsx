@@ -22,7 +22,7 @@ const Navbar = () => {
               </div>
               <div className="ml-auto flex items-center pr-2">
                 <MobileNav />
-                <div className="hidden lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
+                <div className="lg:flex lg:flex-1 lg:items-center lg:justify-end lg:space-x-6">
                   <div className="ml-4 flow-root lg:ml-6">
                     <Cart />
                   </div>
