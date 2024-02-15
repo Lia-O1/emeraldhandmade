@@ -17,10 +17,7 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
     "lucide-react": "^0.325.0",
-    "mongodb": "^6.3.0",
-    "mongoose": "^8.1.2",
     "next": "14.1.0",
-    "next-auth": "^4.24.5",
     "react": "^18",
     "react-dom": "^18",
     "sonner": "^1.4.0",
@@ -30,7 +27,6 @@
     "zustand": "^4.5.0"
   },
   "devDependencies": {
-    "@types/mongoose": "^5.11.97",
     "@types/node": "^20.11.17",
     "@types/react": "^18",
     "@types/react-dom": "^18",
