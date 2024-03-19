@@ -1,10 +1,16 @@
 "use client";
 
-import { useCart, type Product } from "@/hooks/useCart";
+import { useCart } from "@/hooks/useCart";
 import { Button } from "./ui/button";
 import { toast } from "sonner";
+import { ItemProps } from "@/types/types";
 
-const AddToCartButton = ({ product }: { product: Product }) => {
+interface ProductProps extends ItemProps {
+  category: string;
+  subcategory: string;
+}
+
+const AddToCartButton = ({ product }: { product: ProductProps }) => {
   const { addItem } = useCart();
   return (
     <Button

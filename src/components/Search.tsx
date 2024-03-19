@@ -8,7 +8,7 @@ import { ItemProps } from "@/types/types";
 import Suggestions from "./Suggestions";
 import { useDebouncedState } from "@/hooks/useDebouncedState";
 
-const Search = () => {
+const Search = ({ mobile }: { mobile?: string }) => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useDebouncedState<ItemProps[]>([], 300);
   const [hideSuggestions, setHideSuggestions] = useState(true);
@@ -55,11 +55,11 @@ const Search = () => {
 
   return (
     <div className="flex relative">
-      <div className="flex items-center text-sm gap-2">
+      <div className="flex items-center text-sm gap-2 px-4">
         <input
           onBlur={handleBlur}
           type="search"
-          className="w-100 border-solid border-2 rounded-md lg:p-1"
+          className="w-100 border-solid border-2 rounded-md p-1"
           placeholder="Find unique crafts…"
           value={value}
           onChange={handleSearchInputChange}
@@ -74,7 +74,7 @@ const Search = () => {
           <SearchIcon />
         </Link>
       </div>
-      {!hideSuggestions && <Suggestions suggestions={suggestions} />}
+      {!mobile && !hideSuggestions && <Suggestions suggestions={suggestions} />}
     </div>
   );
 };

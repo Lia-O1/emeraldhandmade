@@ -6,6 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
+import Search from "./Search";
 
 const MobileNav = () => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -33,7 +34,7 @@ const MobileNav = () => {
       <div className="fixed overflow-y-scroll overscroll-y-none inset-0 z-40 flex">
         <div className="w-full">
           <div className="relative flex w-full flex-col overflow-y-auto bg-white pb-12 shadow-xl">
-            <div className="flex px-4 pb-2 pt-5">
+            <div className="flex px-4 pb-2 pt-5 ml-auto">
               <button
                 type="button"
                 onClick={() => setIsOpen(false)}
@@ -43,13 +44,17 @@ const MobileNav = () => {
               </button>
             </div>
 
+            <div className="mt-4 pt-6">
+              <Search mobile="true" />
+            </div>
+
             <div className="mt-2">
               <ul>
                 {PRODUCT_CATEGORIES.map((category, i) => {
                   return (
                     <li
                       key={category.value}
-                      className="space-y-10 px-4 pb-8 pt-10"
+                      className="space-y-6 px-4 pb-8 pt-4"
                     >
                       <div className="border-b border-gray-200">
                         <div className="-mb-px flex">
@@ -59,7 +64,7 @@ const MobileNav = () => {
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-2 gap-y-10 gap-x-4">
+                      <div className="grid grid-cols-2 gap-y-6 gap-x-4">
                         {category.featured.map((item) => (
                           <div
                             key={item.name}
