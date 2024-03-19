@@ -1,4 +1,4 @@
-import MaxWidthWrapper from "@/app/components/MaxWidthWrapper";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import AddToCartButton from "@/components/AddToCartButton";
 import ImageSlider from "@/components/ImageSlider";
 import ProductReel from "@/components/ProductReel";

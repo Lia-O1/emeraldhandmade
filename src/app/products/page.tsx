@@ -1,6 +1,6 @@
 import ProductReel from "@/components/ProductReel";
 import { products } from "@/config/products";
-import MaxWidthWrapper from "../components/MaxWidthWrapper";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 
 interface PageProps {
   searchParams: { [key: string]: string | string[] | undefined };

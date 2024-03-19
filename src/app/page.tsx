@@ -2,7 +2,7 @@ import { Button, buttonVariants } from "@/components/ui/button";
 import { CheckCircle, Gift, Heart } from "lucide-react";
 import Link from "next/link";
 import { products } from "@/config/products";
-import MaxWidthWrapper from "./components/MaxWidthWrapper";
+import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
 
 const perks = [
