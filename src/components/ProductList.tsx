@@ -1,7 +1,7 @@
 import Link from "next/link";
 import ImageSlider from "./ImageSlider";
 import { formatPrice } from "@/lib/utils";
-import { ItemProps } from "./ProductReel";
+import { ItemProps } from "@/types/types";
 
 interface ProductListProps {
   item: ItemProps;

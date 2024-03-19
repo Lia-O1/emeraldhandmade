@@ -1,13 +1,6 @@
 import Link from "next/link";
 import ProductList from "./ProductList";
-
-export interface ItemProps {
-  name: string;
-  id: string;
-  price: string;
-  description: string;
-  urls: string[];
-}
+import { ItemProps } from "@/types/types";
 
 interface ProductReelProps {
   title: string;

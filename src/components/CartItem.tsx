@@ -1,9 +1,10 @@
-import { useCart, type Product } from "@/hooks/useCart";
+import { useCart } from "@/hooks/useCart";
 import { formatPrice } from "@/lib/utils";
 import { X } from "lucide-react";
 import Image from "next/image";
+import { ItemProps } from "@/types/types";
 
-const CartItem = ({ product }: { product: Product }) => {
+const CartItem = ({ product }: { product: ItemProps }) => {
   const imageUrl = product.urls[0];
 
   const { removeItem } = useCart();
