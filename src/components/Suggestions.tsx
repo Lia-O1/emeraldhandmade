@@ -17,7 +17,7 @@ const Suggestions = ({ suggestions }: SuggestionsProps) => {
           {suggestions.length > 0 ? (
             suggestions.map((s, i) => {
               return (
-                <div key={i} className="p-2 py-3">
+                <div key={i} className="p-2 py-3 hover:bg-gray-100">
                   <Link href={`/product/${s.id}`}>{s.name}</Link>
                 </div>
               );

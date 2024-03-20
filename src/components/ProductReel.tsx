@@ -3,7 +3,7 @@ import ProductList from "./ProductList";
 import { ItemProps } from "@/types/types";
 
 interface ProductReelProps {
-  title: string;
+  title?: string;
   href?: string;
   items: ItemProps[];
 }

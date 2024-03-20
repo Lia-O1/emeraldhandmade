@@ -1,22 +1,32 @@
 "use client";
-import Link from "next/link";
-import { buttonVariants } from "./ui/button";
+
+import { Button } from "./ui/button";
 import { ChangeEvent, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import { products } from "@/config/products";
 import { ItemProps } from "@/types/types";
 import Suggestions from "./Suggestions";
 import { useDebouncedState } from "@/hooks/useDebouncedState";
+import { useRouter } from "next/navigation";
 
 const Search = ({ mobile }: { mobile?: string }) => {
   const [value, setValue] = useState("");
   const [suggestions, setSuggestions] = useDebouncedState<ItemProps[]>([], 300);
   const [hideSuggestions, setHideSuggestions] = useState(true);
+  const router = useRouter();
 
   const handleBlur = () => {
     setTimeout(() => {
       setHideSuggestions(true);
     }, 300);
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (suggestions.length > 0) {
+      router.push(`/search/${value}`);
+    }
+    setHideSuggestions(true);
   };
 
   const handleSearchInputChange = (e: ChangeEvent<HTMLInputElement>) => {
@@ -54,8 +64,8 @@ const Search = ({ mobile }: { mobile?: string }) => {
   };
 
   return (
-    <div className="flex relative">
-      <div className="flex items-center text-sm gap-2 px-4">
+    <form onSubmit={handleSubmit} className="flex relative">
+      <div className="flex items-center text-sm gap-2">
         <input
           onBlur={handleBlur}
           type="search"
@@ -64,18 +74,17 @@ const Search = ({ mobile }: { mobile?: string }) => {
           value={value}
           onChange={handleSearchInputChange}
         />
-        <Link
-          href="/"
-          className={buttonVariants({
-            size: "sm",
-            variant: "ghost",
-          })}
+        <Button
+          disabled={suggestions.length === 0}
+          type="submit"
+          size="sm"
+          variant="ghost"
         >
           <SearchIcon />
-        </Link>
+        </Button>
       </div>
       {!mobile && !hideSuggestions && <Suggestions suggestions={suggestions} />}
-    </div>
+    </form>
   );
 };
 
