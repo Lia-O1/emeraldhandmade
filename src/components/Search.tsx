@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "./ui/button";
+import { Input } from "@/components/ui/input";
 import { ChangeEvent, useState } from "react";
 import { SearchIcon } from "lucide-react";
 import { products } from "@/config/products";
@@ -66,10 +67,10 @@ const Search = ({ mobile }: { mobile?: string }) => {
   return (
     <form onSubmit={handleSubmit} className="flex relative">
       <div className="flex items-center text-sm gap-2">
-        <input
+        <Input
           onBlur={handleBlur}
           type="search"
-          className="w-100 border-solid border-2 rounded-md p-1"
+          id="search"
           placeholder="Find unique crafts…"
           value={value}
           onChange={handleSearchInputChange}

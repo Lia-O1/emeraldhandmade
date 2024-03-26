@@ -169,7 +169,7 @@ const Page = () => {
             <div className="mt-6">
               <Button
                 disabled={items.length === 0}
-                onClick={() => router.push("/thankyou")}
+                onClick={() => router.push("/payment")}
                 className="w-full"
                 size="lg"
                 variant="emerald"
