@@ -201,7 +201,7 @@ export const products = [
     items: [
       {
         name: "Glittery Dual-Tone Leaf Earrings",
-        id: "chamomileEssence",
+        id: "leafEarrings",
         price: "25",
         description:
           "Add a touch of sparkle to your look with our Glittery Dual-Tone Leaf Earrings. The upper part of these earrings features a glittery texture that beautifully catches the light, while the lower part has a smooth, dark finish for a striking contrast. Perfect for both casual and formal occasions, these earrings are a versatile addition to your jewelry collection.",

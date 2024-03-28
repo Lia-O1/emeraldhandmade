@@ -11,7 +11,6 @@ const ProductList = ({ item }: ProductListProps) => {
   return (
     <div>
       <Link
-        key={item.id}
         className="h-full w-full cursor-pointer group/main"
         href={`/product/${item.id}`}
       >
