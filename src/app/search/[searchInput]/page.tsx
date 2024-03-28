@@ -6,6 +6,13 @@ import ProductReel from "@/components/ProductReel";
 import { products } from "@/config/products";
 import Search from "@/components/Search";
 import Checkbox from "@/components/Checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
 interface SearchPageProps {
   params: {
@@ -18,6 +25,9 @@ const SearchPage = ({ params }: SearchPageProps) => {
 
   const [categoryFilter, setCategoryFilter] = useState<string[]>([]);
   const [subcategoryFilter, setSubcategoryFilter] = useState<string[]>([]);
+  const [sortOrder, setSortOrder] = useState<
+    "none" | "price-asc" | "price-desc"
+  >("none");
 
   const allItems = products.flatMap((product) =>
     product.items.map((item) => ({
@@ -27,14 +37,33 @@ const SearchPage = ({ params }: SearchPageProps) => {
     }))
   );
 
-  const filteredItems = allItems.filter(
-    (item) =>
-      (item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
-        item.description.toLowerCase().includes(searchInput.toLowerCase())) &&
-      (categoryFilter.length === 0 || categoryFilter.includes(item.category)) &&
-      (subcategoryFilter.length === 0 ||
-        subcategoryFilter.includes(item.subcategory))
-  );
+  const filteredItemsNoPrice = allItems.filter((item) => {
+    const matchesSearchInput =
+      item.name.toLowerCase().includes(searchInput.toLowerCase()) ||
+      item.description.toLowerCase().includes(searchInput.toLowerCase());
+
+    const matchesCategoryFilter =
+      categoryFilter.length === 0 || categoryFilter.includes(item.category);
+
+    const matchesSubcategoryFilter =
+      subcategoryFilter.length === 0 ||
+      subcategoryFilter.includes(item.subcategory);
+
+    return (
+      matchesSearchInput && matchesCategoryFilter && matchesSubcategoryFilter
+    );
+  });
+
+  const filteredItems = [...filteredItemsNoPrice].sort((a, b) => {
+    switch (sortOrder) {
+      case "price-asc":
+        return Number(a.price) - Number(b.price);
+      case "price-desc":
+        return Number(b.price) - Number(a.price);
+      default:
+        return 0;
+    }
+  });
 
   const uniqueCategories = [
     ...new Set(products.map((product) => product.category)),
@@ -70,14 +99,33 @@ const SearchPage = ({ params }: SearchPageProps) => {
 
   return (
     <MaxWidthWrapper>
-      <section className="pt-12">
+      <section className="pt-12 mx-1">
         <h1 className="text-2xl font-bold text-gray-900 sm:text-3xl">
           Search Results
         </h1>
         <div className="pt-8">
           <Search />
         </div>
-        <div className="flex flex-wrap mx-1">
+        <div className="w-1/2 md:w-1/4 pt-4">
+          <div className="font-medium text-md text-gray-700 py-2">Price:</div>
+          <Select
+            onValueChange={(value) =>
+              setSortOrder(value as "none" | "price-asc" | "price-desc")
+            }
+            defaultValue={sortOrder}
+          >
+            <SelectTrigger>
+              <SelectValue placeholder="Select a sort order" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="none">None</SelectItem>
+              <SelectItem value="price-asc">Low to High</SelectItem>
+              <SelectItem value="price-desc">High to Low</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="flex flex-wrap">
           <div className="w-1/2 md:w-1/4 pt-4">
             <div className="font-medium text-md text-gray-700 py-2">
               Categories:
